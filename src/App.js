@@ -4,12 +4,14 @@ import EllipsisText from "react-ellipsis-text"
 import axios from 'axios'
 import 'react-responsive-select/dist/react-responsive-select.css'
 
-function App() {
+function App({ domElement }) {
+  const subreddit = domElement.getAttribute("data-subreddit")
+
   const [projects, setProjects] = useState([])
   const [selection, setSelection] = useState([])
 
   useEffect(() => {
-    axios.get('http://localhost:9000/api/v1/projects/48e40a9c-c5e9-4d63-9aba-b77cdf4ca67b')
+    axios.get(`https://jobshot.app/api/v1/projects/${subreddit}`)
       .then(function (response) {
         // console.log(response);
         if(response && response.data) {
