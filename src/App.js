@@ -65,7 +65,7 @@ function App({ domElement }) {
           setSelection(temp)
         }
       })
-  }, [])
+  }, [subreddit])
 
   return (
     <div>
