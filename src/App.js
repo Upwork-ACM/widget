@@ -11,6 +11,7 @@ function App({ domElement }) {
   const [selection, setSelection] = useState([])
 
   useEffect(() => {
+    console.log(subreddit)
     axios.get(`https://jobshot.app/api/v1/projects/${subreddit}`)
       .then(function (response) {
         // console.log(response);
