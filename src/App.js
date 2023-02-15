@@ -11,8 +11,8 @@ function App({ domElement }) {
   const [selection, setSelection] = useState([])
 
   useEffect(() => {
-    console.log(subreddit)
-    axios.get(`https://jobshot.app/api/v1/projects/${subreddit}`)
+    console.log("LOCATION HISTORY", window.location)
+    axios.get(`https://jobshot.app/api/v1/projects/48e40a9c-c5e9-4d63-9aba-b77cdf4ca67b`)
       .then(function (response) {
         // console.log(response);
         if(response && response.data) {
